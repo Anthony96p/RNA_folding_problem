@@ -17,11 +17,14 @@ git clone https://github.com/Anthony96p/TP_RNA
 
 # 2. cd into it !
 cd TP_RNA/
+
+# 3. Add permissions (optional)
+chmod +rwx TP_RNA_main.py TP_RNAScript1.py TP_RNAScript2.py TP_RNAScript3.py
 ````
 
 ## Quick Start - using `TP_RNA_main.py`
 ````shell
-./TP_RNA_main.py -input PDB -output ScoringValues -savepng True -test 4gxy.pdb
+python3 ./TP_RNA_main.py -input PDB -output ScoringValues -savepng True -test 4gxy.pdb
 ````
 ````shell
 # Output
@@ -45,7 +48,7 @@ The third option is not mandatory, it allows to display the training time for ea
 
 ### Run only Train function
 ```bash
-./TP_RNAScript1.py -input PDB -output ScoringValues -details False
+python3 ./TP_RNAScript1.py -input PDB -output ScoringValues -details False
 ```
 
 ## 2<sup>nd</sup> script : Plot function
@@ -64,7 +67,7 @@ Default ``True``.
 
 ### Run only Plot function
 ```bash
-./TP_RNAScript2.py -input ScoringValues -savepng False -printpng True
+python3 ./TP_RNAScript2.py -input ScoringValues -savepng False -printpng True
 ```
 
 ## 3<sup>rd</sup> script : Test function
@@ -80,7 +83,7 @@ of the test dataset (e.g. : `-test 4gxy.pdb`)
 
 ### Run only Test function
 ```bash
-./TP_RNAScript3.py -train ScoringValues -test 4gxy.pdb
+python3 ./TP_RNAScript3.py -train ScoringValues -test 4gxy.pdb
 ```
 
 ## Main script : All functions
@@ -107,7 +110,7 @@ Default ``True``.
 
 ### Run all functions
 ```bash
-./TP_RNA_main.py -input PDB -output ScoringValues -details False -savepng False -printpng True -test 4gxy.pdb
+python3 ./TP_RNA_main.py -input PDB -output ScoringValues -details False -savepng False -printpng True -test 4gxy.pdb
 ```
 
 ## Others :
@@ -139,6 +142,7 @@ function (`pair_res_format()`) shared by script 1 and 3.
 - ``typing_extensions==4.4.0``
 
 ### All libraries and packages used :
+- ``Python 3.10.0``
 - ``import re``
 - ``import os``
 - ``import math``

@@ -28,7 +28,11 @@ python3 ./TP_RNA_main.py -input PDB -output ScoringValues -savepng True -test 4g
 ````
 ````shell
 # Output
-Predicted gibbs free energy of 4gxy.pdb : 33.13404987155446
+Execution time script 1 : 86.4s
+Execution time script 2 : 1.8s
+Execution time script 3 : 1.2s
+	
+Predicted gibbs free energy of 4gxy.pdb : 21.642839968817476
 Total runtime : 89.4s
 ````
 

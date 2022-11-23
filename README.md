@@ -6,7 +6,7 @@ among the astronomically large number of possible conformations. The native fold
 one with the lowest Gibbs free energy, the objective function should be an estimator of this
 energy.
 
-**This deposit was made in the context of a [university project](https://github.com/Anthony96p/TP_RNA/TP_RNA.pdf) in a RNA bioinformatics course 
+**This deposit was made in the context of a [university project](https://github.com/Anthony96p/TP_RNA/blob/master/TP_RNA.pdf) in a RNA bioinformatics course 
 taught by <cite>Mr. Guillaume Postic</cite>.**
 
 

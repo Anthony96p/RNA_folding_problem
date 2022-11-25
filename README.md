@@ -104,7 +104,7 @@ the scoring value files and plot should be saved (e.g. : ``-output ScoringValues
 The third required option will be the name of the pdb file that contains the 3D structure 
 of the test dataset (e.g. : `-test 4gxy.pdb`)
 
-The script 2 has two non required options: :
+The script 3 has two non required options: :
 - The first option allows to display the training time for each pdb file (e.g. : ``-details False``). 
 Default ``False``.
 - The second one allows to save or not the plots and asks as input a boolean (e.g. : ``-savepng False``). 

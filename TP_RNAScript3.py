@@ -12,7 +12,7 @@ from TP_RNA_mainFonctions import pair_res_format
 
 
 def linear_interpolation(directory, pair_res, dist, Gibbs):
-    if dist <= 19:
+    if dist <= 20:
         train_pair_res = np.genfromtxt(directory + '/' + pair_res + '.txt')
 
         if 0 <= dist <= 0.5 or (dist - math.floor(dist)) > 0.5:
@@ -22,17 +22,11 @@ def linear_interpolation(directory, pair_res, dist, Gibbs):
             x1, x2, y1, y2 = math.floor(dist) - 1, math.ceil(dist) - 1, train_pair_res[math.floor(dist) - 1, 1], \
                              train_pair_res[math.ceil(dist) - 1, 1]
 
-        # print(dist)
-        # x1, x2, y1, y2 = math.floor(dist), math.ceil(dist), train_pair_res[math.floor(dist), 1], train_pair_res[
-        #     math.ceil(dist), 1]
-        # print(x1, x2, y1, y2)
-
         E_scores = y1 + (dist - x1) * ((y2 - y1) / (x2 - x1))  # x2-x1=1
         # print (E_scores)
 
         Gibbs = Gibbs + E_scores
         # print (Gibbs)
-        # exit()
 
     return Gibbs
 

@@ -75,7 +75,7 @@ python3 ./TP_RNAScript2.py -input ScoringValues -savepng False -printpng True
 ```
 
 ### Expected output :
-<img src="https://github.com/Anthony96p/RNA_folding_problem/blob/master/ScoringValues/AA.png"/>
+<img src="https://github.com/Anthony96p/RNA_folding_problem/blob/master/ScoringValues/AA.png" alt=""/>
 
 ## 3<sup>rd</sup> script : Test function
 ### Explanatory notes :

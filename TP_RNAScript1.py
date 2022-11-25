@@ -144,7 +144,7 @@ def create_file(log_ratio, pair_res, dist_intervals, path_dir):
         data = file_scoring.read(100)
         if len(data) > 0:
             file_scoring.write("\n")
-        file_scoring.write(str(dist_intervals) + '\t' + str(log_ratio))  # + '\t' + str(obs) + '\t' + str(ref))
+        file_scoring.write(str(dist_intervals) + '\t' + str(log_ratio))
 
 
 def main_script1(pdb_file, Dir, timepdb):

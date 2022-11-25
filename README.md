@@ -24,7 +24,7 @@ chmod +rwx TP_RNA_main.py TP_RNAScript1.py TP_RNAScript2.py TP_RNAScript3.py
 
 ## Quick Start - using `TP_RNA_main.py`
 ````shell
-python3 ./TP_RNA_main.py -input PDB -output ScoringValues -savepng True -test 4gxy.pdb
+./TP_RNA_main.py -input PDB -output ScoringValues -savepng True -test 4gxy.pdb
 ````
 ````shell
 # Output
@@ -35,6 +35,7 @@ Execution time script 3 : 1.2s
 Predicted gibbs free energy of 4gxy.pdb : 21.642839968817476
 Total runtime : 89.4s
 ````
+_**n.b** : Make sure you are using ``python 3``._
 
 ## 1<sup>st</sup> script : Train function
 ### Explanatory notes :
@@ -52,7 +53,7 @@ The third option is not mandatory, it allows to display the training time for ea
 
 ### Run only Train function :
 ```bash
-python3 ./TP_RNAScript1.py -input PDB -output ScoringValues -details False
+./TP_RNAScript1.py -input PDB -output ScoringValues -details False
 ```
 
 ## 2<sup>nd</sup> script : Plot function
@@ -71,7 +72,7 @@ Default ``True``.
 
 ### Run only Plot function :
 ```bash
-python3 ./TP_RNAScript2.py -input ScoringValues -savepng False -printpng True
+./TP_RNAScript2.py -input ScoringValues -savepng False -printpng True
 ```
 
 ### Expected output :
@@ -90,7 +91,7 @@ of the test dataset (e.g. : `-test 4gxy.pdb`)
 
 ### Run only Test function :
 ```bash
-python3 ./TP_RNAScript3.py -train ScoringValues -test 4gxy.pdb
+./TP_RNAScript3.py -train ScoringValues -test 4gxy.pdb
 ```
 
 ## Main script : All functions
@@ -117,7 +118,7 @@ Default ``True``.
 
 ### Run all functions :
 ```bash
-python3 ./TP_RNA_main.py -input PDB -output ScoringValues -details False -savepng False -printpng True -test 4gxy.pdb
+./TP_RNA_main.py -input PDB -output ScoringValues -details False -savepng False -printpng True -test 4gxy.pdb
 ```
 
 ## Others :

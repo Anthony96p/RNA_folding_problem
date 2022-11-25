@@ -73,15 +73,10 @@ def argparse_script3():
                         help='Input directory of RNA train file(s) (output directory script 1) [str]')
     parser.add_argument('-te', '-test', type=str, required=True,
                         help='Input RNA test file [pdb]')
-    # parser.add_argument('-o', '-output', type=str, required=False,
-    #                     help='An optional name for output directory of log ratio file (tabular) [str]')
 
     args = parser.parse_args()
-    # if args.o == None:
-    #     args.o = args.i[:-4]
     print('Input train directory:', args.tr)
     print('Input test file:', args.te)
-    # print('Output directory:', args.o)
 
     directory_train = args.tr
     file_test = args.te

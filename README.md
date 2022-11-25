@@ -37,7 +37,7 @@ Total runtime : 89.4s
 ````
 
 ## 1<sup>st</sup> script : Train function
-### Explanatory notes
+### Explanatory notes :
 In first, the RNA folding problems tool will train the objective function using the 
 interatomic distance distribution from a 3D RNA structure dataset of train (`TP_RNAScript1.py`).
 
@@ -50,13 +50,13 @@ the scoring value files should be saved (e.g. : ``-output ScoringValues``).
 The third option is not mandatory, it allows to display the training time for each pdb file 
 (e.g. : ``-details False``). Default ``False``.
 
-### Run only Train function
+### Run only Train function :
 ```bash
 python3 ./TP_RNAScript1.py -input PDB -output ScoringValues -details False
 ```
 
 ## 2<sup>nd</sup> script : Plot function
-### Explanatory notes
+### Explanatory notes :
 In the second part, the scoring profile of each pair of residues will be plotted as a function of
 the interatomic distance (`TP_RNAScript2.py`).
 
@@ -69,13 +69,16 @@ Default ``False``. Save in the input folder.
 - The second one allows to display or not the plots and asks for a boolean as input (e.g. : ``-printpng True``).
 Default ``True``.
 
-### Run only Plot function
+### Run only Plot function :
 ```bash
 python3 ./TP_RNAScript2.py -input ScoringValues -savepng False -printpng True
 ```
 
+### Expected output :
+<img src="C:\Users\Anthony\PycharmProjects\TP_RNA\ScoringValues\AA.png"/>
+
 ## 3<sup>rd</sup> script : Test function
-### Explanatory notes
+### Explanatory notes :
 In the third part, we use the objective function to evaluate the predicted structures from another 
 3D RNA structure dataset of test (`TP_RNAScript3.py`).
 
@@ -85,13 +88,13 @@ been saved by the script 1  (e.g. : `-train ScoringValues`).
 The second required option will be the name of the pdb file that contains the 3D structure 
 of the test dataset (e.g. : `-test 4gxy.pdb`)
 
-### Run only Test function
+### Run only Test function :
 ```bash
 python3 ./TP_RNAScript3.py -train ScoringValues -test 4gxy.pdb
 ```
 
 ## Main script : All functions
-### Explanatory notes
+### Explanatory notes :
 This is the main script that will run the 3 functions (train, plot and test) with a 
 single command (`TP_RNA_main.py`).
 
@@ -112,7 +115,7 @@ Default ``False``. Save in the input folder.
 - The third one allows to display or not the plots and asks for a boolean as input (e.g. : ``-printpng True``).
 Default ``True``.
 
-### Run all functions
+### Run all functions :
 ```bash
 python3 ./TP_RNA_main.py -input PDB -output ScoringValues -details False -savepng False -printpng True -test 4gxy.pdb
 ```
@@ -157,4 +160,7 @@ function (`pair_res_format()`) shared by script 1 and 3.
 - ``import numpy as np``
 - ``import matplotlib.pyplot as plt``
 - ``from colorhash import ColorHash``
+
+# Author
+PRAGASSAM Anthony
 

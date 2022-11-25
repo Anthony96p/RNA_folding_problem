@@ -22,7 +22,7 @@ def main_script2(directory, save_png, print_png):
         Res = np.genfromtxt(str(directory) + '/' + i + '.txt')
         plt.plot(Res[:, 0], Res[:, 1], 'o-', color=c.hex, label=i)
 
-        plt.legend(loc='upper left')
+        plt.legend(loc='upper right')
         plt.title(i + ' interaction profile of  RNA')
         plt.xlabel('Distance (Å)')
         plt.ylabel('Energy (Pairwise log-ratio)')

@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/RNA_folding_problem.iml" filepath="$PROJECT_DIR$/.idea/RNA_folding_problem.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../TP_RNA - Sans github/.idea/TP_RNA.iml" filepath="$PROJECT_DIR$/../TP_RNA - Sans github/.idea/TP_RNA.iml" />
     </modules>
   </component>
 </project>

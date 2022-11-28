@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 from colorhash import ColorHash
 
 
-def main_script2(directory, save_png, print_png):
+def main_script2(directory, save_png, print_png, results_file=False):
     start = time.time()
 
     base_pairs = ['AA', 'AU', 'AC', 'AG', 'UU', 'UC', 'UG', 'CC', 'CG', 'GG']
@@ -42,6 +42,11 @@ def main_script2(directory, save_png, print_png):
     elapsed = end - start
 
     print(f'Execution time script 2 : {elapsed:.1f}s')
+
+    if results_file is True:
+        with open('Results_RNA_folding_problem.txt', 'a+') as file_scoring:
+            file_scoring.write(f'\nExecution time script 2 : {elapsed:.1f}s')
+
 
 
 def argparse_script2():

@@ -7,7 +7,7 @@ one with the lowest Gibbs free energy, the objective function should be an estim
 energy.
 
 **This deposit was made in the context of a [university project](https://github.com/Anthony96p/RNA_folding_problem/blob/master/TP_RNA.pdf) in a RNA bioinformatics course 
-taught by <cite>Mr. Guillaume Postic</cite>.**
+taught by <cite>_Mr. Guillaume Postic_</cite>.**
 
 
 ## Installation:
@@ -26,6 +26,7 @@ chmod +rwx TP_RNA_main.py TP_RNAScript1.py TP_RNAScript2.py TP_RNAScript3.py
 ````shell
 ./TP_RNA_main.py -input PDB -output ScoringValues -savepng True -test 4gxy.pdb
 ````
+# A Refaire !!!
 ````shell
 # Output
 Execution time script 1 : 86.4s
@@ -48,8 +49,9 @@ are located (e.g. : `-input PDB`).
 The second required option will be the name of the directory (existing or not) in which 
 the scoring value files should be saved (e.g. : ``-output ScoringValues``).
 
-The third option is not mandatory, it allows to display the training time for each pdb file 
-(e.g. : ``-details False``). Default ``False``.
+[//]: # (The third option is not mandatory, it allows to display the training time for each pdb file )
+
+[//]: # (&#40;e.g. : ``-details False``&#41;. Default ``False``.)
 
 ### Run only Train function :
 ```bash
@@ -108,18 +110,24 @@ the scoring value files and plot should be saved (e.g. : ``-output ScoringValues
 The third required option will be the name of the pdb file that contains the 3D structure 
 of the test dataset (e.g. : `-test 4gxy.pdb`)
 
-The script 3 has two non required options: :
-- The first option allows to display the training time for each pdb file (e.g. : ``-details False``). 
-Default ``False``.
-- The second one allows to save or not the plots and asks as input a boolean (e.g. : ``-savepng False``). 
+The script 2 has two non required options: :
+
+[//]: # (- The first option allows to display the training time for each pdb file &#40;e.g. : ``-details False``&#41;. )
+
+[//]: # (Default ``False``.)
+- The first one allows to save or not the plots and asks as input a boolean (e.g. : ``-savepng False``). 
 Default ``False``. Save in the input folder.
-- The third one allows to display or not the plots and asks for a boolean as input (e.g. : ``-printpng True``).
+- The second one allows to display or not the plots and asks for a boolean as input (e.g. : ``-printpng True``).
 Default ``True``.
 
 ### Run all functions :
 ```bash
 ./TP_RNA_main.py -input PDB -output ScoringValues -details False -savepng False -printpng True -test 4gxy.pdb
 ```
+
+### Expected output :
+Returns a file (``Results_RNA_folding_problem.txt``) which will contain the final gibbs free energy and all 
+the process information.
 
 ## Others :
 ### Fonctions script :
@@ -132,6 +140,7 @@ function (`pair_res_format()`) shared by script 1 and 3.
 
 ### To install :
 - ``numpy``
+- ``tqdm``
 - ``matplotlib.pyplot``
 - ``colorhash``
 
@@ -145,7 +154,8 @@ function (`pair_res_format()`) shared by script 1 and 3.
 - ``packaging==21.3``         
 - ``Pillow==9.3.0``           
 - ``pyparsing==3.0.9``        
-- ``python-dateutil==2.8.2``  
+- ``python-dateutil==2.8.2``
+- ``tqdm==4.64.1``
 - ``six==1.16.0  ``           
 - ``typing_extensions==4.4.0``
 
@@ -157,6 +167,7 @@ function (`pair_res_format()`) shared by script 1 and 3.
 - ``import time``
 - ``import shutil``
 - ``import argparse``
+- ``from tqdm import tqdm``
 - ``from os import listdir``
 - ``import numpy as np``
 - ``import matplotlib.pyplot as plt``

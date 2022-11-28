@@ -31,7 +31,7 @@ def linear_interpolation(directory, pair_res, dist, Gibbs):
     return Gibbs
 
 
-def main_script3(train_dir, test_file):
+def main_script3(train_dir, test_file, results_file=False):
     start = time.time()
 
     Gibbs_free_energy = 0
@@ -68,6 +68,10 @@ def main_script3(train_dir, test_file):
     print(f'Execution time script 3 : {elapsed:.1f}s')
 
     print(f"\t\nPredicted gibbs free energy of {test_file} :", Gibbs_free_energy)
+    if results_file is True:
+        with open('Results_RNA_folding_problem.txt', 'a+') as file_scoring:
+            file_scoring.write(f'\nExecution time script 3 : {elapsed:.1f}s\n')
+            file_scoring.write(f"\t\nPredicted gibbs free energy of {test_file} : {Gibbs_free_energy}")
 
 
 def argparse_script3():

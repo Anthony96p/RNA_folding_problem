@@ -7,6 +7,7 @@ import math
 import time
 import shutil
 import argparse
+from tqdm import tqdm
 from os import listdir
 
 from TP_RNA_mainFonctions import calcul_dist
@@ -147,7 +148,7 @@ def create_file(log_ratio, pair_res, dist_intervals, path_dir):
         file_scoring.write(str(dist_intervals) + '\t' + str(log_ratio))
 
 
-def main_script1(pdb_file, Dir, timepdb):
+def main_script1(pdb_file, Dir, results_file=False):
     start = time.time()
 
     obs_freq = dict_obs_freq()  # Creation of the Observer Frequency Dictionary
@@ -155,11 +156,11 @@ def main_script1(pdb_file, Dir, timepdb):
 
     # The script opens and browses the file 2 times in order to browse all possible peers
     for pdb in listdir(pdb_file + "/"):
-        print(f'Current train RNA : {pdb}')
-        if timepdb is True:
+        time.sleep(0.03)
+        if results_file is True:
             startpdb = time.time()
         with open(pdb_file + "/" + pdb, 'r') as file1:
-            for line1 in file1:
+            for line1 in tqdm(file1, desc=f'Current train RNA is {pdb}'):
                 if (re.match('^ATOM', line1)) and line1[12:16] == " C3'":
                     # --------------------------------------------------------------------------- #
                     with open(pdb_file + "/" + pdb, 'r') as file2:
@@ -176,7 +177,8 @@ def main_script1(pdb_file, Dir, timepdb):
                                     pair_res = pair_res_format(line1, line2)  # Formalise the studied pair.
                                     # print(pair_res)
 
-                                    dist = calcul_dist(line1, line2)  # Calculates the distance between the two residues studied.
+                                    dist = calcul_dist(line1,
+                                                       line2)  # Calculates the distance between the two residues studied.
                                     # print(dist)
 
                                     # Compute the observed frequencies: 10 × 20 distances intervals (0 to 20 Å) :
@@ -184,11 +186,12 @@ def main_script1(pdb_file, Dir, timepdb):
 
                                     # Compute the reference frequency (= the “XX” pair) :
                                     ref_freq = compute_ref_freq(dist, ref_freq)
-        if timepdb is True:
+        if results_file is True:
             endpdb = time.time()
             elapsedpdb = endpdb - startpdb
 
-            print(f'File execution time  : {elapsedpdb:.1f}s\n')
+            with open('Results_RNA_folding_problem.txt', 'a+') as file_scoring:
+                file_scoring.write(f'{pdb} file execution time  : {elapsedpdb:.1f}s\n')
 
     fin_obs_freq = end_obs_freq(obs_freq)  # Calculates the frequencies observe total
     fin_ref_freq = end_ref_freq(ref_freq)  # Calculates the frequencies reference total
@@ -204,6 +207,10 @@ def main_script1(pdb_file, Dir, timepdb):
 
     print(f'\nExecution time script 1 : {elapsed:.1f}s')
 
+    if results_file is True:
+        with open('Results_RNA_folding_problem.txt', 'a+') as file_scoring:
+            file_scoring.write(f'\nExecution time script 1 : {elapsed:.1f}s')
+
 
 def argparse_script1():
     parser = argparse.ArgumentParser(description='RNA folding problem; Output log ratio tabulate')
@@ -211,20 +218,15 @@ def argparse_script1():
                         help='Input directory with RNA file (pdb) [str]')
     parser.add_argument('-o', '-output', type=str, required=True,
                         help='Output directory of log ratio file (tabular) [str]')
-    parser.add_argument('-d', '-details', type=lambda x: (str(x).lower() == 'true'), default=False,
-                        required=False,
-                        help='An optional boolean switch to display the duration of each RNA files training [boolean]')
 
     args = parser.parse_args()
 
     print('Input directory:', args.i)
-    print('Output directory:', args.o)
-    print('Print time details:', args.d, "\n")
+    print('Output directory:', args.o, "\n")
 
     file_dir = args.i
     directory = args.o
-    timepdb = args.d
-    main_script1(file_dir, directory, timepdb)
+    main_script1(file_dir, directory)
 
 
 if __name__ == '__main__':

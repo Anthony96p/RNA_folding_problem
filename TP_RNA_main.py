@@ -36,7 +36,6 @@ def main():
     print('Input train directory:', args.i)
     print('Input test file:', args.te)
     print('Output directory train:', args.o)
-    # print('Print time details:', args.d)
     print('Print plot png:', args.p)
     print('Save plot png:', args.s, "\n")
 
@@ -44,14 +43,12 @@ def main():
         file_scoring.write(f'Input train directory: {args.i}\n')
         file_scoring.write(f'Input test file: {args.te}\n')
         file_scoring.write(f'Output directory train: {args.o}\n')
-        # file_scoring.write(f'Print time details: {args.d}\n')
         file_scoring.write(f'Print plot png: {args.p}\n')
         file_scoring.write(f'Save plot png: {args.s}\n\n')
 
     file = args.i
     directory = args.o
     file_test = args.te
-    # timepdb = args.d
     print_png = args.p
     save_png = args.s
 

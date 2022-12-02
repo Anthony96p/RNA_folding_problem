@@ -90,7 +90,7 @@ def end_ref_freq(fin_ref_freq):
         c = c + fin_ref_freq[j]
 
     # Displays the final referenced count table :
-    # print("Ref=>",fin_ref_freq)
+    print("Ref=>",fin_ref_freq)
 
     for j in range(21):
         fin_ref_freq[j] = float(fin_ref_freq[j]) / float(fin_ref_freq['Nxx'])
@@ -177,8 +177,7 @@ def main_script1(pdb_file, Dir, results_file=False):
                                     pair_res = pair_res_format(line1, line2)  # Formalise the studied pair.
                                     # print(pair_res)
 
-                                    dist = calcul_dist(line1,
-                                                       line2)  # Calculates the distance between the two residues studied.
+                                    dist = calcul_dist(line1, line2)  # Calculates the distance between the two residues studied.
                                     # print(dist)
 
                                     # Compute the observed frequencies: 10 × 20 distances intervals (0 to 20 Å) :

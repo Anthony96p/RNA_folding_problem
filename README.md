@@ -20,21 +20,14 @@ cd RNA_folding_problem/
 
 # 3. Add permissions (optional)
 chmod +rwx TP_RNA_main.py TP_RNAScript1.py TP_RNAScript2.py TP_RNAScript3.py
+
+# 4. Install the necessary dependencies using pip:
+pip install -r requirements.txt
 ````
 
 ## Quick Start - using `TP_RNA_main.py`
 ````shell
 ./TP_RNA_main.py -input PDB -output ScoringValues -savepng True -test 4gxy.pdb
-````
-# A Refaire !!!
-````shell
-# Output
-Execution time script 1 : 86.4s
-Execution time script 2 : 1.8s
-Execution time script 3 : 1.2s
-	
-Predicted gibbs free energy of 4gxy.pdb : 21.642839968817476
-Total runtime : 89.4s
 ````
 _**n.b** : Make sure you are using ``python 3``._
 
@@ -137,6 +130,28 @@ The distance calculation function (`calcul_dist()`) shared by script 1 and 3 and
 function (`pair_res_format()`) shared by script 1 and 3.
 
 **<font size="4"> ⚠ </font> Cannot be executed alone** 
+
+### Observed Frequency
+
+The probability (i.e. frequency) of observing two residues *i* and *j* separated by distance bin *r* is calculated as follows:
+
+$$ f_{i,j} ^{OBS}(r) = { N_{i,j}(r) \over N_{i,j} } $$
+
+where N_{i,j(r)} is the count of i and j within the distance bin r, and Ni,j is the count of i and j for
+all distance bins. Only distance intervals of 0 to 20 Å are taken into account.
+
+### Reference Frequency
+
+The reference frequency is the same formula except that the different residue types (A, U, C, G) are indistinct ("X"):
+
+$$ f_{X,X} ^{REF}(r) = { N_{X,X}(r) \over N_{X,X}} $$
+
+### Pseudo-Energy
+
+The score for each residue pair is computed as followed:
+
+$$ u_{i,j}(r) = { -log \left( f _{i,j} ^{OBS}(r) \over f_{i,j} ^{REF}(r) \right) } $$
+
 
 ### To install :
 - ``numpy``

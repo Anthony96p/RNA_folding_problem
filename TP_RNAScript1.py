@@ -90,7 +90,7 @@ def end_ref_freq(fin_ref_freq):
         c = c + fin_ref_freq[j]
 
     # Displays the final referenced count table :
-    print("Ref=>",fin_ref_freq)
+    # print("Ref=>",fin_ref_freq)
 
     for j in range(21):
         fin_ref_freq[j] = float(fin_ref_freq[j]) / float(fin_ref_freq['Nxx'])

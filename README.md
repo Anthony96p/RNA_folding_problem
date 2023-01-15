@@ -27,7 +27,7 @@ pip install -r requirements.txt
 
 ## Quick Start - using `TP_RNA_main.py`
 ````shell
-./TP_RNA_main.py -input PDB -output ScoringValues -savepng True -test 4gxy.pdb
+./TP_RNA_main.py -input PDB -output ScoringValues -savepng True -test 2jyj.pdb
 ````
 _**n.b** : Make sure you are using ``python 3``._
 
@@ -82,11 +82,11 @@ The first required option will be the name of the directory in which the scoring
 been saved by the script 1  (e.g. : `-train ScoringValues`).
 
 The second required option will be the name of the pdb file that contains the 3D structure 
-of the test dataset (e.g. : `-test 4gxy.pdb`)
+of the test dataset (e.g. : `-test 2jyj.pdb`)
 
 ### Run only Test function :
 ```bash
-./TP_RNAScript3.py -train ScoringValues -test 4gxy.pdb
+./TP_RNAScript3.py -train ScoringValues -test 2jyj.pdb
 ```
 
 ## Main script : All functions
@@ -101,7 +101,7 @@ The second required option will be the name of the directory (existing or not) i
 the scoring value files and plot should be saved (e.g. : ``-output ScoringValues``).
 
 The third required option will be the name of the pdb file that contains the 3D structure 
-of the test dataset (e.g. : `-test 4gxy.pdb`)
+of the test dataset (e.g. : `-test 2jyj.pdb`)
 
 The script 2 has two non required options:
 

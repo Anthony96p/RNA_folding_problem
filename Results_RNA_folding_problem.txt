@@ -1,23 +1,24 @@
 Input train directory: PDB
-Input test file: 4gxy.pdb
+Input test file: 2jyj.pdb
 Output directory train: ScoringValues
 Print plot png: True
 Save plot png: True
 
-1a3m.pdb file execution time  : 21.2s
+1a3m.pdb file execution time  : 17.4s
 1a4d.pdb file execution time  : 0.1s
-1f7g.pdb file execution time  : 16.5s
-2jyf.pdb file execution time  : 56.2s
-2jyh.pdb file execution time  : 13.2s
-2jyj.pdb file execution time  : 51.9s
-4p5j.pdb file execution time  : 0.7s
-6me0.pdb file execution time  : 44.7s
+1f7g.pdb file execution time  : 12.9s
+2jyf.pdb file execution time  : 44.8s
+2jyh.pdb file execution time  : 11.5s
+2jyj.pdb file execution time  : 46.9s
+4gxy.pdb file execution time  : 1.7s
+4p5j.pdb file execution time  : 0.5s
+6me0.pdb file execution time  : 39.0s
 
-Execution time script 1 : 205.0s
-Execution time script 2 : 4.6s
-Execution time script 3 : 3.5s
+Execution time script 1 : 175.3s
+Execution time script 2 : 2.7s
+Execution time script 3 : 80.7s
 	
-Predicted gibbs free energy of 4gxy.pdb : 18.623960853963258
-Total runtime : 213.1s
+Predicted gibbs free energy of 2jyj.pdb : -1605.7884491113798
+Total runtime : 258.7s
 
 Save in Results_RNA_folding_problem.txt file

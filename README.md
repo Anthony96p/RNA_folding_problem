@@ -131,13 +131,15 @@ function (`pair_res_format()`) shared by script 1 and 3.
 
 **<font size="4"> ⚠ </font> Cannot be executed alone** 
 
+
+
 ### Observed Frequency
 
 The probability (i.e. frequency) of observing two residues *i* and *j* separated by distance bin *r* is calculated as follows:
 
 $$ f_{i,j} ^{OBS}(r) = { N_{i,j}(r) \over N_{i,j} } $$
 
-where N_{i,j(r)} is the count of i and j within the distance bin r, and Ni,j is the count of i and j for
+where $N_{i,j(r)}$ is the count of i and j within the distance bin r, and Ni,j is the count of i and j for
 all distance bins. Only distance intervals of 0 to 20 Å are taken into account.
 
 ### Reference Frequency
@@ -173,20 +175,6 @@ $$ u_{i,j}(r) = { -log \left( f _{i,j} ^{OBS}(r) \over f_{i,j} ^{REF}(r) \right)
 - ``tqdm==4.64.1``
 - ``six==1.16.0  ``           
 - ``typing_extensions==4.4.0``
-
-### All libraries and packages used :
-- ``Python 3.10.0``
-- ``import re``
-- ``import os``
-- ``import math``
-- ``import time``
-- ``import shutil``
-- ``import argparse``
-- ``from tqdm import tqdm``
-- ``from os import listdir``
-- ``import numpy as np``
-- ``import matplotlib.pyplot as plt``
-- ``from colorhash import ColorHash``
 
 # Author
 PRAGASSAM Anthony

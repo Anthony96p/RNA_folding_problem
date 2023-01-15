@@ -131,7 +131,11 @@ function (`pair_res_format()`) shared by script 1 and 3.
 
 **<font size="4"> ⚠ </font> Cannot be executed alone** 
 
+### Constraints
 
+* Only C3' atoms are taken into account
+* Only "intrachain" distances are considered
+* Only consider residues separated by at least 3 positions on the sequence
 
 ### Observed Frequency
 

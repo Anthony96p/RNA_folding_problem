@@ -6,7 +6,6 @@ import time
 import math
 import argparse
 import numpy as np
-from tqdm import tqdm
 
 from TP_RNA_mainFonctions import calcul_dist
 from TP_RNA_mainFonctions import pair_res_format
@@ -39,7 +38,7 @@ def main_script3(train_dir, test_file, results_file=False):
 
     # The script opens and browses the file 2 times in order to browse all possible peers
     with open(test_file, 'r') as file1:
-        for line1 in tqdm(file1, desc=f'Test RNA is {test_file}'):
+        for line1 in file1:
             if (re.match('^ATOM', line1)) and line1[12:16] == " C3'":
                 # --------------------------------------------------------------------------- #
                 with open(test_file, 'r') as file2:
